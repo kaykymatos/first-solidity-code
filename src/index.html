@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Miner</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="../node_modules/web3/dist/web3.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Blockchain Miner</h1>
+    <div class="block-info">
+      <p><strong>Bloco Atual:</strong> <span id="current-block">12345</span></p>
+      <p><strong>Status da Mineração:</strong> <span id="mining-status">Minerando...</span></p>
+    </div>
+     </div>
+     <script>
+        const web3 = new Web3("HTTP://127.0.0.1:7545");
+  
+        async function isMining() {
+          let minerando = await web3.eth.isMining();
+          console.log("Minerando", minerando);
+  
+          let block = await web3.eth.getBlockNumber();
+          console.log("bloco atual", block);
+  
+          document.getElementById('mining-status').textContent = minerando?"Sim":"Não";
+          document.getElementById('current-block').textContent = block;
+        }
+        isMining();
+      </script>
+</body>
+</html>
+

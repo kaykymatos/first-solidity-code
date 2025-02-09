@@ -1,0 +1,26 @@
+# Ignorar a pasta build, onde os artefatos de compilação são gerados
+/build/
+
+# Ignorar as pastas de dependências (caso use algum gerenciador de pacotes como npm ou yarn)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignorar arquivos temporários
+/.vscode/
+/*.log
+
+# Ignorar arquivos de contratos compilados
+/*.abi
+/*.bin
+/*.dbg
+
+# Ignorar diretórios de pacotes de dependências se estiver usando Hardhat ou Truffle
+artifacts/
+cache/
+
+# Ignorar arquivos de teste e relatórios de cobertura
+coverage/
+
+# Ignorar arquivos de deploy
+deploy/
